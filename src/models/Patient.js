@@ -8,12 +8,9 @@ const patientSchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
-  name: String,
-  birth: {
-    date: Date,
-    country: String,
-    city: String,
-  },
+  firstName: String,
+  lastName: String,
+  birthDate: Date,
   civilStatus: {
     type: String,
     enum: ['single', 'married'],
@@ -35,6 +32,20 @@ const patientSchema = new mongoose.Schema({
   },
   occupation: {
     type: String, lowercase: true, trim: true,
+  },
+  placeOfResidence: {
+    city: {
+      type: String, lowercase: true, trim: true,
+    },
+    country: {
+      type: String, lowercase: true, trim: true,
+    },
+    address: {
+      type: String, lowercase: true, trim: true,
+    }
+  },
+  history: {
+    pathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'PathologicalHistory'}
   },
 });
 

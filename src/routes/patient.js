@@ -10,6 +10,11 @@ const routes = [
     method: 'GET',
     url: '/api/patients/:uuid',
     handler: PatientController.getPatient,
+    schema:{
+      params:{
+        uuid: {type: 'string'}
+      }
+    }
   },
   {
     method: 'POST',
