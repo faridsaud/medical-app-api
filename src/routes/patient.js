@@ -1,36 +1,4 @@
 import PatientController from '../controllers/Patient';
+import {getRESTfulRoutes} from '../helpers/routes';
 
-const routes = [
-  {
-    method: 'GET',
-    url: '/api/patients',
-    handler: PatientController.getPatients,
-  },
-  {
-    method: 'GET',
-    url: '/api/patients/:uuid',
-    handler: PatientController.getPatient,
-    schema:{
-      params:{
-        uuid: {type: 'string'}
-      }
-    }
-  },
-  {
-    method: 'POST',
-    url: '/api/patients',
-    handler: PatientController.addPatient,
-  },
-  {
-    method: 'PUT',
-    url: '/api/patients/:uuid',
-    handler: PatientController.updatePatient,
-  },
-  {
-    method: 'DELETE',
-    url: '/api/patients/:uuid',
-    handler: PatientController.deletePatient,
-  }
-];
-
-export default routes;
+export default getRESTfulRoutes(PatientController, {singular: 'Patient', plural: 'Patients'});
