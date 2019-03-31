@@ -20,7 +20,7 @@ db.then(() => console.log('MongoDB connected...'))
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen(3000);
+    await fastify.listen(process.env.PORT);
     fastify.swagger();
     fastify.log.info(`server listening on ${fastify.server.address().port}`);
   } catch (err) {
