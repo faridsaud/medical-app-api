@@ -44,9 +44,6 @@ const patientSchema = new mongoose.Schema({
       type: String, lowercase: true, trim: true,
     }
   },
-  history: {
-    pathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'PathologicalHistory'}
-  },
 });
 
 module.exports = mongoose.model('Patient', patientSchema);
