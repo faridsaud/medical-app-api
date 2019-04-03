@@ -9,7 +9,7 @@ const bodyExamSchema = new mongoose.Schema({
     unique: true,
   },
   weight: Number,
-  size: String,
+  size: Number,
   bodyMassIndex: String,
   bodyFatPercentage: Number,
   bodyMusclePercentage: Number,
