@@ -24,7 +24,6 @@ fastify.register(require('fastify-cookie'));
 // Auth
 fastify
 .decorate('verifyJWT', function (req, reply, done) {
-  console.log("verifyJWT");
   try {
     const accessToken = req.cookies.accessToken;
     const {email, uuid} = fastify.jwt.decode(accessToken);

@@ -8,6 +8,7 @@ const patientSchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
+  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   firstName: String,
   lastName: String,
   birthDate: Date,

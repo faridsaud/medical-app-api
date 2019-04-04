@@ -30,9 +30,7 @@ const userSchema = new mongoose.Schema({
 userSchema.pre('save', function(next) {
   try {
     bcrypt.hash(this.password, 10, (err, hash) => {
-      console.log({hash});
       this.password = hash;
-      console.log({password: this.password});
       next();
     });
   }catch (e) {
@@ -43,9 +41,8 @@ userSchema.pre('save', function(next) {
 userSchema.pre('update', function(next) {
   try {
     bcrypt.hash(this.password, 10, (err, hash) => {
-      console.log({hash});
       this.password = hash;
-      console.log({password: this.password});
+      next();
     });
   }catch (e) {
     next(e);
