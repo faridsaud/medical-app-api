@@ -6,6 +6,8 @@ import clinicHistory from './clinicHistory';
 import faceExam from './faceExam';
 import medicalConsultation from './medicalConsultation';
 import physicalExam from './physicalExam';
+import user from './user';
+import login from './login';
 
 const routes = [
     ...patient,
@@ -16,6 +18,8 @@ const routes = [
     ...faceExam,
     ...medicalConsultation,
     ...physicalExam,
+    ...user,
+    ...login,
 ];
 
 export default routes;

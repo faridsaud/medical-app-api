@@ -4,9 +4,11 @@
   "description": "BE API",
   "main": "./src/index.js",
   "dependencies": {
+    "bcrypt": "^3.0.5",
     "boom": "^7.3.0",
     "dotenv": "^7.0.0",
     "fastify": "^2.1.0",
+    "fastify-jwt": "^0.9.6",
     "fastify-swagger": "^2.3.2",
     "mongoose": "^5.4.20",
     "nodemon": "^1.18.10",
