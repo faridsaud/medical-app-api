@@ -7,15 +7,17 @@ export default {
     try {
       const {email, password} = req.body;
       const user = await User.findOne({email});
-      bcrypt.compare(password, user.password, function(err, res) {
-        if(res){
+      bcrypt.compare(password, user.password, async (err, res) => {
+        if (res) {
+          const token = await reply.jwtSign({email, uuid: user.uuid});
           reply
-          .code(200)
-          .send();
-        }else{
-          reply
-          .code(403)
-          .send();
+          .setCookie('accessToken', token, {
+            httpOnly: true,
+            maxAge: 604800,
+          })
+          .code(200).send(token);
+        } else {
+          reply.code(403).send();
         }
       });
     } catch (err) {

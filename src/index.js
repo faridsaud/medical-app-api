@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import jwt from 'fastify-jwt';
 import db from './config/db';
 import swagger from './config/swagger';
 import routes from './routes';
@@ -9,6 +10,14 @@ const fastify = require('fastify')({
 });
 
 fastify.register(require('fastify-swagger'), swagger.options);
+
+fastify.register(jwt, {
+  secret: 'v^HRhh9rJxxq5gfiKjwi5wAlm4WX@d',
+});
+
+fastify.register(require('fastify-cookie'));
+
+
 
 routes.forEach((route) => {
   fastify.route(route)
