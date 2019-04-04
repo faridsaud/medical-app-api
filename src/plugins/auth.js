@@ -1,14 +1,12 @@
-import authenticatedRoutes from '../routes/authenticatedRoutes';
+import {authRoutes} from '../routes';
 
-const fp = require('fastify-plugin');
-
-module.exports = fp(function (fastify, opts, next) {
+module.exports = (fastify, options, next) => {
   fastify.addHook('preHandler', fastify.auth([
     fastify.verifyJWT,
   ]));
-  authenticatedRoutes.forEach((route) => {
+  authRoutes.forEach((route) => {
     fastify.route(route)
   });
 
   next();
-});
+};

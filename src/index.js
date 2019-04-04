@@ -3,7 +3,7 @@ import jwt from 'fastify-jwt';
 import validator from 'validator';
 import db from './config/db';
 import swagger from './config/swagger';
-import routes from './routes';
+import {nonAuthRoutes} from './routes';
 
 // Require the framework and instantiate it
 const fastify = require('fastify')({
@@ -24,6 +24,7 @@ fastify.register(require('fastify-cookie'));
 // Auth
 fastify
 .decorate('verifyJWT', function (req, reply, done) {
+  console.log("verifyJWT");
   try {
     const accessToken = req.cookies.accessToken;
     const {email, uuid} = fastify.jwt.decode(accessToken);
@@ -41,15 +42,17 @@ fastify
 })
 .register(require('fastify-auth'));
 
-// Auth Routes
+// Routes that doesn't requires to be authenticated
+nonAuthRoutes.forEach((route) => {
+  fastify.route(route)
+});
+
+// Routes that requires to be authenticated
 fastify.register(
     require('./plugins/auth')
 );
 
-// No Auth Routes
-routes.forEach((route) => {
-  fastify.route(route)
-});
+
 
 
 
