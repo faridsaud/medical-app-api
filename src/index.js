@@ -15,7 +15,7 @@ fastify.register(require('fastify-swagger'), swagger.options);
 
 // JWT
 fastify.register(jwt, {
-  secret: 'v^HRhh9rJxxq5gfiKjwi5wAlm4WX@d',
+  secret: process.env.SECRET,
 });
 
 // Cookies
