@@ -8,7 +8,7 @@ const bodyExamSchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
-  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  owner: {type: String, ref: 'User'},
   weight: Number,
   bodyMassIndex: Number,
   size: Number,

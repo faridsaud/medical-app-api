@@ -9,7 +9,7 @@ const clinicHistorySchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
-  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  owner: {type: String, ref: 'User'},
   patient: {type: mongoose.Schema.Types.ObjectId, ref: 'Patient'},
   pathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'PathologicalHistory'},
   nonPathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'NonPathologicalHistory'},

@@ -8,7 +8,7 @@ const physicalExamSchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
-  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  owner: {type: String, ref: 'User'},
   hair: String,
   implantationLine: String,
   faceExam: {type: mongoose.Schema.Types.ObjectId, ref: 'FaceExam'},

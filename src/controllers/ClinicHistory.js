@@ -1,7 +1,7 @@
 import ClinicHistory from '../models/ClinicHistory';
-import {getRESTfulControllerMethods} from '../helpers/controllers';
+import {getRESTfulControllerMethodsWithOwner} from '../helpers/controllers';
 
 export default {
-  ...getRESTfulControllerMethods(ClinicHistory, {singular: 'ClinicHistory', plural: 'ClinicHistories'})
+  ...getRESTfulControllerMethodsWithOwner(ClinicHistory, {singular: 'ClinicHistory', plural: 'ClinicHistories'})
 }
 

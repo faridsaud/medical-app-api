@@ -8,7 +8,7 @@ const faceExamSchema = new mongoose.Schema({
     default: uuidv4,
     unique: true,
   },
-  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  owner: {type: String, ref: 'User'},
   wrinkles: String,
   volume: String,
   dyschromias: String,

@@ -1,7 +1,7 @@
 import FaceExam from '../models/FaceExam';
-import {getRESTfulControllerMethods} from '../helpers/controllers';
+import {getRESTfulControllerMethodsWithOwner} from '../helpers/controllers';
 
 export default {
-  ...getRESTfulControllerMethods(FaceExam, {singular: 'FaceExam', plural: 'FaceExams'})
+  ...getRESTfulControllerMethodsWithOwner(FaceExam, {singular: 'FaceExam', plural: 'FaceExams'})
 }
 
