@@ -13,6 +13,12 @@ const fastify = require('fastify')({
 // Swagger
 fastify.register(require('fastify-swagger'), swagger.options);
 
+// CORS
+fastify.register(require('fastify-cors'), {
+  // put your options here
+})
+
+
 // JWT
 fastify.register(jwt, {
   secret: process.env.SECRET,

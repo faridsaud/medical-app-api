@@ -7,6 +7,9 @@ export default {
     try {
       const {email, password} = req.body;
       const user = await User.findOne({email});
+      if(!user){
+        reply.code(401).send();
+      }
       bcrypt.compare(password, user.password, async (err, res) => {
         if (res) {
           const token = await reply.jwtSign({email, uuid: user._id});
