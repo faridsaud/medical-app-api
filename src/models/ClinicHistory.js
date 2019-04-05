@@ -16,7 +16,7 @@ const clinicHistorySchema = new mongoose.Schema({
   patient: patientSchema,
   pathologicalHistory: pathologicalHistorySchema,
   nonPathologicalHistory: nonPathologicalHistorySchema,
-  medicalConsultations: [{type: mongoose.Schema.Types.Object, ref: 'MedicalConsultation'}],
+  medicalConsultations: [{type: String, ref: 'MedicalConsultation'}],
 });
 
 module.exports = mongoose.model('ClinicHistory', clinicHistorySchema);

@@ -10,6 +10,7 @@ const medicalConsultationSchema = new mongoose.Schema({
     unique: true,
   },
   owner: {type: String, ref: 'User'},
+  clinicHistory: {type: String, ref: 'ClinicHistory'},
   reason: String,
   currentIllness: String,
   physicalExam: physicalExamSchema,
