@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
+import {physicalExamSchema} from './PhysicalExam'
 
 const medicalConsultationSchema = new mongoose.Schema({
   _id: {
@@ -11,7 +12,7 @@ const medicalConsultationSchema = new mongoose.Schema({
   owner: {type: String, ref: 'User'},
   reason: String,
   currentIllness: String,
-  physicalExam: {type: mongoose.Schema.Types.ObjectId, ref: 'PhysicalExam'},
+  physicalExam: physicalExamSchema,
   diagnosis: String,
   treatmentPlan: String,
   indications: String,

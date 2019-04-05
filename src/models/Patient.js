@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
 
-const patientSchema = new mongoose.Schema({
+export const patientSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
@@ -47,4 +47,4 @@ const patientSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Patient', patientSchema);
+export default mongoose.model('Patient', patientSchema);

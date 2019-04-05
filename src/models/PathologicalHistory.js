@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
 
-const pathologicalHistorySchema = new mongoose.Schema({
+export const pathologicalHistorySchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
@@ -16,4 +16,4 @@ const pathologicalHistorySchema = new mongoose.Schema({
   hospital: String,
 });
 
-module.exports = mongoose.model('PathologicalHistory', pathologicalHistorySchema);
+export default mongoose.model('PathologicalHistory', pathologicalHistorySchema);

@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
+import {faceExamSchema} from './FaceExam'
+import {bodyExamSchema} from './BodyExam'
 
-const physicalExamSchema = new mongoose.Schema({
+export const physicalExamSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
@@ -11,8 +13,8 @@ const physicalExamSchema = new mongoose.Schema({
   owner: {type: String, ref: 'User'},
   hair: String,
   implantationLine: String,
-  faceExam: {type: mongoose.Schema.Types.ObjectId, ref: 'FaceExam'},
-  bodyExam: {type: mongoose.Schema.Types.ObjectId, ref: 'BodyExam'},
+  faceExam: faceExamSchema,
+  bodyExam: bodyExamSchema,
 });
 
-module.exports = mongoose.model('PhysicalExam', physicalExamSchema);
+export default mongoose.model('PhysicalExam', physicalExamSchema);

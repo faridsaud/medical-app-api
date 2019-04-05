@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
 
-const faceExamSchema = new mongoose.Schema({
+export const faceExamSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
@@ -19,4 +19,4 @@ const faceExamSchema = new mongoose.Schema({
   others: String,
 });
 
-module.exports = mongoose.model('FaceExam', faceExamSchema);
+export default mongoose.model('FaceExam', faceExamSchema);

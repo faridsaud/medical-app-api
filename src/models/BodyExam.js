@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import uuidv4 from 'uuid/v4';
 
-const bodyExamSchema = new mongoose.Schema({
+export const bodyExamSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
@@ -27,4 +27,4 @@ const bodyExamSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('BodyExam', bodyExamSchema);
+export default mongoose.model('BodyExam', bodyExamSchema);

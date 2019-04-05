@@ -1,4 +1,7 @@
 import uuidv4 from 'uuid/v4';
+import {patientSchema} from './Patient';
+import {pathologicalHistorySchema} from './PathologicalHistory';
+import {nonPathologicalHistorySchema} from './NonPathologicalHistory';
 
 const mongoose = require('mongoose');
 const validator = require('validator');
@@ -10,10 +13,10 @@ const clinicHistorySchema = new mongoose.Schema({
     unique: true,
   },
   owner: {type: String, ref: 'User'},
-  patient: {type: mongoose.Schema.Types.ObjectId, ref: 'Patient'},
-  pathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'PathologicalHistory'},
-  nonPathologicalHistory: {type: mongoose.Schema.Types.ObjectId, ref: 'NonPathologicalHistory'},
-  medicalConsultations: [{type: mongoose.Schema.Types.ObjectId, ref: 'MedicalConsultation'}],
+  patient: patientSchema,
+  pathologicalHistory: pathologicalHistorySchema,
+  nonPathologicalHistory: nonPathologicalHistorySchema,
+  medicalConsultations: [{type: mongoose.Schema.Types.Object, ref: 'MedicalConsultation'}],
 });
 
 module.exports = mongoose.model('ClinicHistory', clinicHistorySchema);

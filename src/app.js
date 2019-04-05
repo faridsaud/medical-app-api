@@ -16,6 +16,8 @@ fastify.register(require('fastify-swagger'), swagger.options);
 // CORS
 fastify.register(require('fastify-cors'), {
   // put your options here
+  credentials: true,
+  origin: true,
 });
 
 // Rate Limit
