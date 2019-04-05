@@ -16,7 +16,13 @@ fastify.register(require('fastify-swagger'), swagger.options);
 // CORS
 fastify.register(require('fastify-cors'), {
   // put your options here
-})
+});
+
+// Rate Limit
+fastify.register(require('fastify-rate-limit'), {
+  max: 100,
+  timeWindow: '1 minute'
+});
 
 
 // JWT
