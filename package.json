@@ -4,7 +4,10 @@
   "description": "BE API",
   "main": "./src/index.js",
   "dependencies": {
-    "babel-cli": "^7.0.0-beta.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/cli": "^7.4.3",
     "bcrypt": "^3.0.5",
     "boom": "^7.3.0",
     "dotenv": "^7.0.0",
@@ -21,14 +24,13 @@
     "nodemon": "^1.18.10",
     "string": "^3.3.3",
     "uuid": "^3.3.2",
-    "validator": "^10.11.0",
-    "@babel/core": "^7.4.0",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.2"
+    "validator": "^10.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Farid Saud",
