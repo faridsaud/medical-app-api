@@ -4,6 +4,7 @@
   "description": "BE API",
   "main": "./src/index.js",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "bcrypt": "^3.0.5",
     "boom": "^7.3.0",
     "dotenv": "^7.0.0",
