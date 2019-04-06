@@ -28,7 +28,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Farid Saud",
