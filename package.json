@@ -4,7 +4,7 @@
   "description": "BE API",
   "main": "./src/index.js",
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^7.0.0-beta.3",
     "bcrypt": "^3.0.5",
     "boom": "^7.3.0",
     "dotenv": "^7.0.0",
@@ -26,10 +26,9 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Farid Saud",
