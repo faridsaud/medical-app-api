@@ -29,6 +29,7 @@
   "devDependencies": {
   },
   "scripts": {
+    "heroku-prebuild": "rm -rf node_modules",
     "start": "nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
