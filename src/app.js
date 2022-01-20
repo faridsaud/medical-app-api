@@ -42,10 +42,10 @@ fastify
     const accessToken = req.headers.accessToken;
     const {email, uuid} = fastify.jwt.decode(accessToken);
     if(!validator.isEmail(email)){
-      done(new Error());
+      done(new Error("Invalid Token"));
     }
     if(!validator.isUUID(uuid)){
-      done(new Error());
+      done(new Error("Invalid Token"));
     }
     done();
   }catch (e) {
