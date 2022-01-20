@@ -40,8 +40,6 @@ fastify
 .decorate('verifyJWT', function (req, reply, done) {
   try {
     const accessToken = req.headers.authorization;
-    console.log({headers: req.headers})
-    console.log({req})
     const {email, uuid} = fastify.jwt.decode(accessToken);
     if(!validator.isEmail(email)){
       done(new Error("Invalid Token"));
