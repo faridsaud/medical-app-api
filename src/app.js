@@ -39,7 +39,7 @@ fastify.register(require('fastify-cookie'));
 fastify
 .decorate('verifyJWT', function (req, reply, done) {
   try {
-    const accessToken = req.cookies.accessToken;
+    const accessToken = req.headers.accessToken;
     const {email, uuid} = fastify.jwt.decode(accessToken);
     if(!validator.isEmail(email)){
       done(new Error());
